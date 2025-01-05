@@ -3,7 +3,8 @@ import { AppContext } from "../AppContext";
 export default function Header(): React.JSX.Element {
     const { state, dispatch } = React.useContext(AppContext)
     const handleRestart = () => {
-        dispatch({ type: "RESTART" })
+        dispatch({ type: "REQUEST_RESTART" })
+        dispatch({ type: "SET_PAGE", page: "end" })
         dispatch({ type: "SET_TURN", turn: "x" })
     }
     return (

@@ -8,14 +8,15 @@ export default function Playground(): React.JSX.Element {
     React.useEffect(() => {
         if (!state || !state.data) return
         if (state.currentPage == "end" || state.currentPage == "home") return
-        if (checkTie(state.data)) {
-            dispatch({ type: "SET_WINNER", winner: "tie" })
-            dispatch({ type: "SET_PAGE", page: "end" })
-            return
-        }
+
         const winner = checkWinner(state.data)
         if (winner) {
             dispatch({ type: "SET_WINNER", winner: winner as TicTacToe })
+            dispatch({ type: "SET_PAGE", page: "end" })
+            return
+        }
+        if (checkTie(state.data)) {
+            dispatch({ type: "SET_WINNER", winner: "tie" })
             dispatch({ type: "SET_PAGE", page: "end" })
             return
         }

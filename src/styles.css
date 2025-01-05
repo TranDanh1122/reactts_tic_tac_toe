@@ -554,6 +554,12 @@ video {
   display: none;
 }
 
+.large {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
 .small {
   font-size: 1.25rem;
   font-weight: 700;
@@ -575,6 +581,10 @@ video {
   pointer-events: none;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -589,6 +599,14 @@ video {
 
 .top-\[\.5rem\] {
   top: .5rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-1\/2 {
+  top: 50%;
 }
 
 .z-10 {
@@ -617,6 +635,10 @@ video {
   margin-top: 2rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -627,6 +649,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-16 {
@@ -651,6 +677,10 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-24 {
+  height: 6rem;
 }
 
 .w-1\/2 {
@@ -683,6 +713,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .max-w-\[28\.75rem\] {
@@ -723,6 +757,10 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-y-5 {
@@ -770,6 +808,10 @@ video {
   background-color: rgb(168 191 201 / var(--tw-bg-opacity, 1));
 }
 
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -812,8 +854,17 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-\[2\.5rem\] {
+  font-size: 2.5rem;
 }
 
 .font-bold {
@@ -828,6 +879,10 @@ video {
   letter-spacing: 1px;
 }
 
+.tracking-\[2\.5px\] {
+  letter-spacing: 2.5px;
+}
+
 .text-dark_navy {
   --tw-text-opacity: 1;
   color: rgb(26 42 51 / var(--tw-text-opacity, 1));
@@ -836,6 +891,16 @@ video {
 .text-sliver {
   --tw-text-opacity: 1;
   color: rgb(168 191 201 / var(--tw-text-opacity, 1));
+}
+
+.text-light_blue {
+  --tw-text-opacity: 1;
+  color: rgb(49 195 189 / var(--tw-text-opacity, 1));
+}
+
+.text-light_yellow {
+  --tw-text-opacity: 1;
+  color: rgb(242 177 55 / var(--tw-text-opacity, 1));
 }
 
 .shadow-lg {
@@ -890,6 +955,11 @@ html {
 .hover\:bg-sliver_hover:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(219 232 237 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-light_yellow_hover:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 200 96 / var(--tw-bg-opacity, 1));
 }
 
 @media (min-width: 0) and (max-width: 767px) {
