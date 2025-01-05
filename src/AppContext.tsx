@@ -57,6 +57,7 @@ const appReducer = (state: AppContextType, action: ReducerAction): AppContextTyp
 
             return { ...newState }
         }
+        
         case "RESTART": return { ...state, data: Array(3).fill(Array(3).fill("")) }
         default: return { ...state }
     }

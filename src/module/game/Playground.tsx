@@ -1,13 +1,13 @@
 import React from "react";
 import { AppContext } from "../../AppContext";
 import Box from "../../components/Box";
-import { checkTie, checkWinner } from "../../helpers/helper";
+import { checkTie, checkWinner, cpuMark } from "../../helpers/helper";
 export default function Playground(): React.JSX.Element {
     const { state, dispatch } = React.useContext(AppContext)
 
     React.useEffect(() => {
         if (!state || !state.data) return
-        if(state.currentPage == "end" || state.currentPage == "home") return
+        if (state.currentPage == "end" || state.currentPage == "home") return
         if (checkTie(state.data)) {
             dispatch({ type: "SET_WINNER", winner: "tie" })
             dispatch({ type: "SET_PAGE", page: "end" })
@@ -19,7 +19,19 @@ export default function Playground(): React.JSX.Element {
             dispatch({ type: "SET_PAGE", page: "end" })
             return
         }
-    }, [state.data, dispatch])
+    }, [state?.data])
+
+    React.useEffect(() => {
+        if (!state) return
+        if (state.turn == state.player2.mark && state.type == "solo") {
+            const result = cpuMark(state.data);
+            if (result) {
+                const { x, y } = result;
+                dispatch({ type: "MARK", row: x, col: y });
+                dispatch({ type: "SET_TURN", turn: state?.turn == "x" ? "o" : "x" });
+            }
+        }
+    }, [state?.turn])
     if (!state) return <p>Loading</p>
 
     return (

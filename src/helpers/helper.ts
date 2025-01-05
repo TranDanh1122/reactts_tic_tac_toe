@@ -27,3 +27,18 @@ export function checkTie(data: string[][]) {
     const tie = data.every(row => row.every(cell => cell !== ''));
     return tie
 }
+export function cpuMark(data: string[][]) {
+    const emptyCells = [];
+    for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data[i].length; j++) {
+            if (data[i][j] === '') { // null đại diện cho ô trống
+                emptyCells.push({ row: i, col: j });
+            }
+        }
+    }
+    if (emptyCells.length === 0) return 
+
+    const randomIndex = Math.floor(Math.random() * emptyCells.length);
+    const cpuMove = emptyCells[randomIndex];
+    return { x: cpuMove.row, y: cpuMove.col }
+}

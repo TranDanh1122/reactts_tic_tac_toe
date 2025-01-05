@@ -12,7 +12,7 @@ interface BoxProps {
 export default function Box({ position, mark }: BoxProps): React.JSX.Element {
     const { state, dispatch } = React.useContext(AppContext)
     const hanleClick = () => {
-        if (mark) return false
+        if (mark || !state) return
         dispatch({ type: "MARK", row: position.row, col: position.col })
         dispatch({ type: "SET_TURN", turn: state?.turn == "x" ? "o" : "x" })
     }
