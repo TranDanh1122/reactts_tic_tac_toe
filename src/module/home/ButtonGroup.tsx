@@ -14,7 +14,7 @@ export default function ButtonGroup(): React.JSX.Element {
     }
     return (<>
         {
-            initBtnGroup.map(btn => <Button onClickBtn={handleClick} button={btn}></Button>)
+            initBtnGroup.map((btn, index) => <Button key={index} onClickBtn={handleClick} button={btn} />)
         }
     </>)
 }

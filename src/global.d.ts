@@ -4,5 +4,6 @@ declare global {
         mark: TicTacToe,
         wins: number,
     }
+
 }
 export { }

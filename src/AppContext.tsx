@@ -9,7 +9,7 @@ interface AppContextType {
     data: string[][],
     currentPage: "home" | "game" | "end",
 }
-type ReducerAction = { type: "RESET" }
+type ReducerAction = { type: "RESET" } | { type: "RESTART" }
     | { type: "SET_PAGE", page: "home" | "game" | "end" }
     | { type: "SET_TYPE", userPick: "duo" | "solo" }
     | { type: "SET_TURN", turn: TicTacToe }
@@ -54,8 +54,10 @@ const appReducer = (state: AppContextType, action: ReducerAction): AppContextTyp
             } else {
                 newState.player2.wins++
             }
+
             return { ...newState }
         }
+        case "RESTART": return { ...state, data: Array(3).fill(Array(3).fill("")) }
         default: return { ...state }
     }
 }

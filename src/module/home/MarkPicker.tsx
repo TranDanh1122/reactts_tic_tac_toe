@@ -23,7 +23,7 @@ export default function MarkPicker(): React.JSX.Element {
                 Pick player 1's mark
             </h2>
             <div className="flex rounded-xl flex-nowrap bg-dark_navy my-5 p-2">
-                {pickState.map(picker => <Picker picker={picker} onSelected={handleSelect} ></Picker>)}
+                {pickState.map((picker, index) => <Picker picker={picker} key={index} onSelected={handleSelect} />)}
             </div>
             <span className="text-sliver uppercase body block text-center"> Remember: X goes first</span>
         </>

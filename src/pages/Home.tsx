@@ -13,7 +13,7 @@ export default function Home(): React.JSX.Element {
                 <MarkPicker />
             </div>
             <div className="card_footer flex flex-wrap gap-y-8 mt-8 items-center ">
-                <ButtonGroup></ButtonGroup>
+                <ButtonGroup/>
             </div>
         </div>
     </>)
